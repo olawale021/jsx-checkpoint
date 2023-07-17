@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Cards';
+import Product from './components/Products';
+
 
 function App() {
+  const firstName = prompt('Enter your first name');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="content">
+      <Card />
+
+      <div className="message">
+        <h2>Hello, {firstName ? firstName : 'Hello there'}!</h2>
+        {firstName && <img className="img" src={Product.image} alt="Profile" />}
+      </div>
     </div>
   );
 }
